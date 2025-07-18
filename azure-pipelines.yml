@@ -32,6 +32,13 @@ stages:
         packageType: 'runtime'
         version: '$(dotnetSdkVersion)'
 
+    - task: UseDotNet@2
+      displayName: 'Use .NET Runtime 6'
+      inputs:
+        packageType: 'runtime'
+        version: '6.0.x'
+        includePreviewVersions: false
+
     - task: Npm@1
       displayName: 'Run npm install'
       inputs:
